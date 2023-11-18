@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "aacdc379-42c9-48fd-8fc7-ed6a0ffb25f3",
+		"name": "JAVA Avancé",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15542841"
+	},
+	"item": [
+		{
+			"name": "Planes Request",
+			"item": [
+				{
+					"name": "List all planes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/planes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"planes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get plane by registration",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/planes/registration/F-ABCD",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"planes",
+								"registration",
+								"F-ABCD"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get plane by operator",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/planes/operator/Boeing",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"planes",
+								"operator",
+								"Boeing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create plane",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"capacity\": 16,\r\n    \"operator\": \"AladinAirLines\",\r\n    \"model\": \"BOEING CV2\",\r\n    \"registration\": \"F-BOOM2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/planes/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"planes",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/planes/id/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"planes",
+								"id",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fly Request",
+			"item": []
+		}
+	]
+}
