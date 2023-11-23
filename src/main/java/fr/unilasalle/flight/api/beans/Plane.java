@@ -14,13 +14,13 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "planes")
-
 public class Plane extends PanacheEntityBase
 {
 
     @Id
     @SequenceGenerator(name = "planes_sequence", sequenceName = "planes_sequence", initialValue = 1, allocationSize = 1)
     @Setter
+    @Getter
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "planes_sequence")
     private int id;
     
@@ -41,7 +41,7 @@ public class Plane extends PanacheEntityBase
     
     @Setter
     @Getter
-    @Column(nullable = false, name = "registration")
+    @Column(nullable = false, name = "registration", unique = true)
     private String registration;
 
     @Override

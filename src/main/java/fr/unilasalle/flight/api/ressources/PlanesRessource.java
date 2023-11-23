@@ -1,7 +1,7 @@
 package fr.unilasalle.flight.api.ressources;
 
 import fr.unilasalle.flight.api.beans.Plane;
-import fr.unilasalle.flight.api.repositories.PlanesRepositorie;
+import fr.unilasalle.flight.api.repositories.PlanesRepositories;
 
 import java.util.List;
 
@@ -23,12 +23,19 @@ public class PlanesRessource
 {
     
     @Inject
-    PlanesRepositorie planesRepositorie;
+    PlanesRepositories planesRepositorie;
 
     @GET
     public List<Plane> getAllPlanes()
     {
         return planesRepositorie.getAllPlanes();
+    }
+
+    @GET
+    @Path("/ids")
+    public List<Plane> getAllPlanesIds()
+    {
+        return planesRepositorie.getAllPlanesIds();
     }
 
     @GET

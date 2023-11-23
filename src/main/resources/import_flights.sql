@@ -1,0 +1,2 @@
+INSERT INTO flights (id, number, origin, destination, departure_date, departure_time, arrival_date, arrival_time, plane_id) 
+VALUES (1, 'AA 123', 'MIA', 'LAX', '2019-01-01', '10:00:00', '2019-01-01', '12:00:00', 1);

@@ -8,7 +8,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 
 
 @ApplicationScoped
-public class PlanesRepositorie implements PanacheRepositoryBase<Plane, Integer> 
+public class PlanesRepositories implements PanacheRepositoryBase<Plane, Integer> 
 {
 
     
@@ -16,6 +16,13 @@ public class PlanesRepositorie implements PanacheRepositoryBase<Plane, Integer>
     {
         return this.listAll();
     }
+
+    public List<Plane> getAllPlanesIds()
+    {
+        return this.list("id");
+    }
+
+
 
     public Plane getPlaneByRegistration(String registration)
     {
