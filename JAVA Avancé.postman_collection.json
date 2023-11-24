@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "aacdc379-42c9-48fd-8fc7-ed6a0ffb25f3",
+		"_postman_id": "ef130e8c-d0de-48dc-ba3e-4d7c879dafd9",
 		"name": "JAVA Avancé",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "15542841"
+		"_exporter_id": "17618662"
 	},
 	"item": [
 		{
@@ -125,12 +125,80 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Get all ids planes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/planes/ids",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"planes",
+								"ids"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
 		{
-			"name": "Fly Request",
-			"item": []
+			"name": "Flight Request",
+			"item": [
+				{
+					"name": "Get all flights",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/flights",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"flights"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create flight",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/flights",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"flights"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
