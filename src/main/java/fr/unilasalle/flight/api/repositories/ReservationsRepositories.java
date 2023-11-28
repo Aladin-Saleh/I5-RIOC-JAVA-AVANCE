@@ -46,9 +46,20 @@ public class ReservationsRepositories implements PanacheRepositoryBase<Reservati
     public void addReservationForUnregisteredPassenger(Reservation reservation, Passenger passenger)
     {
         Flight flight   = new FlightsRepositories().getFlightById(reservation.getFlight_id());
-        Plane plane     = new PlanesRepositories().getPlaneById(flight.getPlane_id());
+        Plane plane     = flight != null ? new PlanesRepositories().getPlaneById(flight.getPlane_id()) : null;
+
         new PassengersRepositories().addPassenger(passenger);
         reservation.setPassenger_id(passenger.getId());
+
+        if (flight == null)
+        {
+            throw new RuntimeException("Flight not found");
+        }
+
+        if (plane == null)
+        {
+            throw new RuntimeException("Plane not found");
+        }
 
         if (this.getReservationsCountByFlightId(reservation.getFlight_id()) >= plane.getCapacity())
         {
@@ -63,20 +74,19 @@ public class ReservationsRepositories implements PanacheRepositoryBase<Reservati
         this.delete(reservation);
     }
 
+    public void deleteReservationByPassengerId(int passenger_id)
+    {
+        if (new PassengersRepositories().getPassengerById(passenger_id) == null)
+        {
+            throw new RuntimeException("Passenger not found");
+        }
+        this.delete("passenger_id", passenger_id);
+    }
+
     public void deleteReservationByFlightId(int flight_id)
     {
         this.delete("flight_id", flight_id);
     }
-
-
-
-
-
-
-
-
-
-
 
 
 }

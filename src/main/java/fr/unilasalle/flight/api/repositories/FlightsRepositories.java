@@ -23,14 +23,10 @@ public class FlightsRepositories implements PanacheRepositoryBase<Flight, Intege
         return this.find("destination", destination).list();
     }
 
-
-    
-
     public Flight getFlightById(int id)
     {
         return this.findById(id);
     }
-
 
 
     public Flight getFlightByNumber(String number)

@@ -1,6 +1,7 @@
 package fr.unilasalle.flight.api.beans;
 
 import java.sql.Time;
+import java.sql.Timestamp;
 import java.util.Date;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
@@ -38,10 +39,10 @@ public class Flight extends PanacheEntityBase
     private String destination;
 
     @Column(nullable = false, name = "departure_date")
-    private Date departure_date;
+    private Timestamp departure_date;
 
     @Column(nullable = false, name = "departure_time")
-    private Time departure_time;
+    private Timestamp departure_time;
 
     @Column(nullable = false, name = "arrival_date")
     private Date arrival_date;
