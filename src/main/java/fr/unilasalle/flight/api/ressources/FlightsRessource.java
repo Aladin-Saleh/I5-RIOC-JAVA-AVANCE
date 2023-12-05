@@ -41,13 +41,13 @@ public class FlightsRessource
         if (flight == null || flight.isEmpty())
         {
             String message = "Aucun vol ne correspond à cette destination";
-            return Response.status(400).entity(message).build();
+            return Response.status(404).entity(message).build();
         }
 
         if (destination.equals("") || destination == null || destination.isBlank())
         {
             String message = "La destination ne peut pas être vide";
-            return Response.status(400).entity(message).build();
+            return Response.status(404).entity(message).build();
         }
 
         return flight.isEmpty() ? Response.status(404).build() : Response.status(200).entity(flight).build();
@@ -61,13 +61,13 @@ public class FlightsRessource
         if (flight == null || flight.getNumber() == null || flight.getNumber().isEmpty())
         {
             String message = "Aucun vol ne correspond à ce numéro";
-            return Response.status(400).entity(message).build();
+            return Response.status(404).entity(message).build();
         }
 
         if (number == null || number.equals("") || number.isBlank())
         {
             String message = "Le numéro ne peut pas être vide";
-            return Response.status(400).entity(message).build();
+            return Response.status(404).entity(message).build();
         }
 
         return flight == null ? Response.status(404).build() : Response.status(200).entity(flight).build();
@@ -98,13 +98,13 @@ public class FlightsRessource
         if (number == null || number.equals("") || number.isBlank())
         {
             String message = "Le numéro ne peut pas être vide";
-            return Response.status(400).entity(message).build();
+            return Response.status(404).entity(message).build();
         }
 
         if (flight == null)
         {
             String message = "Aucun vol ne correspond à ce numéro";
-            return Response.status(400).entity(message).build();
+            return Response.status(404).entity(message).build();
         }
 
         flightsRepositorie.deleteFlight(flight);

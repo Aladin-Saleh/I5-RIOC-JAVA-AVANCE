@@ -10,8 +10,6 @@ import jakarta.enterprise.context.ApplicationScoped;
 public class PassengersRepositories implements PanacheRepositoryBase<Passenger, Integer> 
 {
 
-
-
     public List<Passenger> getAllPassengers()
     {
         return this.listAll();
